@@ -1,5 +1,53 @@
-<p>layout-page works!</p>
-
-<router-outlet></router-outlet>
-
-<h5>Footer</h5>
+<!-- El componente mat-sidenav-container crea un contenedor para el sidenav y el contenido principal -->
+<mat-sidenav-container fullscreen>
+    <!-- El sidenav que se puede abrir y cerrar -->
+    <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
+        <!-- Barra de herramientas dentro del sidenav -->
+        <mat-toolbar color="primary">
+            <!-- Título del menú -->
+            <span>Menu</span>
+            <!-- Espacio flexible para alinear elementos -->
+            <span class="spacer"></span>
+            <!-- Botón para abrir/cerrar el sidenav -->
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <!-- Icono de menú -->
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <!-- Lista de elementos de navegación en el sidenav -->
+        <mat-nav-list>
+            <!-- Elemento de lista generado dinámicamente para cada elemento en sidebarItems -->
+            <mat-list-item 
+                *ngFor="let item of sidebarItems" 
+                [routerLink]="item.url"
+                (click)="sidenav.toggle()"
+            >
+                <!-- Icono del elemento de la lista -->
+                <mat-icon matListItemIcon>{{ item.icon}}</mat-icon>
+                <!-- Etiqueta del elemento de la lista -->
+                {{item.label}}
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    
+    <!-- Barra de herramientas en la parte superior de la página -->
+    <mat-toolbar color="primary">
+        <!-- Botón para abrir/cerrar el sidenav -->
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <!-- Icono de menú -->
+            <mat-icon>menu</mat-icon>
+        </button>
+        <!-- Espacio flexible para alinear elementos -->
+        <span class="spacer"></span>
+        <!-- Botón de logout -->
+        <button mat-button>
+            logout
+        </button>
+    </mat-toolbar>
+    
+    <!-- Contenedor para el contenido principal de la página -->
+    <div class="container">
+        <!-- El componente router-outlet para mostrar los componentes de enrutamiento -->
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>

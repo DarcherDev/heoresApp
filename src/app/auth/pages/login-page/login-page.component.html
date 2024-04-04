@@ -1,19 +1,27 @@
+<!-- Contenedor principal con diseño flex vertical -->
 <div class="flex flex-column">
-        <span class="text-lg mb-4">Login</span>
+    <!-- Título del formulario de inicio de sesión -->
+    <span class="text-lg mb-4">Login</span>
 
-        <mat-form-field>
-            <mat-label>Usuario</mat-label>
-            <input type="text" matInput placeholder="Nombre de usuario">
-        </mat-form-field>
+    <!-- Campo de formulario para el nombre de usuario -->
+    <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input type="text" matInput placeholder="Nombre de usuario">
+    </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>contraseña</mat-label>
-            <input type="password" matInput placeholsder="contraseña">
-         </mat-form-field>
-         <button mat-button mat-flat-button color="primary">
-            <mat-icon>save</mat-icon>
-            ingresar
-        </button>
+    <!-- Campo de formulario para la contraseña -->
+    <mat-form-field>
+        <mat-label>contraseña</mat-label>
+        <input type="password" matInput placeholder="contraseña">
+    </mat-form-field>
+
+    <!-- Botón para enviar el formulario de inicio de sesión -->
+    <button mat-button mat-flat-button color="primary">
+        <mat-icon>save</mat-icon>
+        ingresar
+    </button>
+
+    <!-- Enlace para redirigir a la página de registro -->
     <div class="flex justify-content-center mt-5">
         <a routerLink="/auth/new-account">¿ya te registraste?</a>
     </div>

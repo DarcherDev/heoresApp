@@ -1,24 +1,34 @@
+<!-- Contenedor principal con diseño flex vertical -->
 <div class="flex flex-column">
+    <!-- Título del formulario de creación de usuario -->
     <span class="text-lg mb-4">Crear Usuario</span>
 
+    <!-- Campo de formulario para el nombre de usuario -->
     <mat-form-field>
         <mat-label>Usuario</mat-label>
         <input type="text" matInput placeholder="usuario">
     </mat-form-field>
+    
+    <!-- Campo de formulario para el nombre -->
     <mat-form-field>
         <mat-label>Nombre</mat-label>
         <input type="text" matInput placeholder="Nombre">
     </mat-form-field>
 
+    <!-- Campo de formulario para la contraseña -->
     <mat-form-field>
         <mat-label>contraseña</mat-label>
-        <input type="password" matInput placeholsder="contraseña">
-     </mat-form-field>
-     <button mat-button mat-flat-button color="primary">
+        <input type="password" matInput placeholder="contraseña">
+    </mat-form-field>
+
+    <!-- Botón para enviar el formulario de creación de cuenta -->
+    <button mat-button mat-flat-button color="primary">
         <mat-icon>save</mat-icon>
         Crear cuenta
     </button>
-<div class="flex justify-content-center mt-5">
-    <a routerLink="/auth/login">si estoy registrado</a>
-</div>
+
+    <!-- Enlace para redirigir a la página de inicio de sesión -->
+    <div class="flex justify-content-center mt-5">
+        <a routerLink="/auth/login">si estoy registrado</a>
+    </div>
 </div>
