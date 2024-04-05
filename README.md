@@ -6,7 +6,7 @@ CRUD angular
 1. clonar el proyecto
 2. ejecutar ```npm install```
 3. levanta backend ```npm run backend```
-4. ejecutar app ```npm start``` o ```ng server -o```
+4. ejecutar app ```npm start``` o ```ng serve -o```
 
 ## backend server
 run ```npm run backemd``` for a backend server. navigate to ```http://localhost:3000/users``` and ```http://localhost:3000/heroes```
