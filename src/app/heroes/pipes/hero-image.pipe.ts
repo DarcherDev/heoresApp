@@ -5,15 +5,14 @@ import { Hero } from '../interfaces/hero.interface';
   name: 'heroImage'
 })
 export class HeroImagePipe implements PipeTransform {
-
-  url_image: String = 'assets/no-image.png';
-
+  
   transform(hero: Hero): String {
-    if (hero.alt_img) {
-      this.url_image = hero.alt_img;
-    } else {
-      this.url_image = `assets/heroes/${hero.id}.jpg`;
+    if(!hero.id && !hero.alt_img){
+      return 'assets/no-image.png';
     }
-    return this.url_image;
+    if (hero.alt_img) return hero.alt_img; //https://google.com/flash.png
+        
+    return `assets/heroes/${hero.id}.jpg`;
+ 
   }
 }
