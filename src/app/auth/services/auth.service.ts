@@ -29,14 +29,15 @@ export class AuthService {
   }
 
   checkAuthentication(): Observable<boolean> {
-    if ( typeof window === 'undefined' || !localStorage.getItem('token')) return of(false);
+
+    if ( typeof window === 'undefined' || !localStorage.getItem('token') ) return of(false);
 
     const token = localStorage.getItem('token');
 
     return this.http.get<User>(`${ this.baseUrl }/users/1`)
       .pipe(
-        tap( (user) => (this.user = user)),
-        map( (user) => !!user ),
+        tap( user => this.user = user ),
+        map( user => !!user ),
         catchError( err => of(false) )
       );
   }
