@@ -39,8 +39,9 @@
         </button>
         <!-- Espacio flexible para alinear elementos -->
         <span class="spacer"></span>
+        <span>{{user?.email}}</span>
         <!-- Botón de logout -->
-        <button mat-button>
+        <button mat-button (click)="onLogout()")>
             logout
         </button>
     </mat-toolbar>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes,} from '@angular/router';
-import { canActivateGuard, canMatchGuard } from './auth/guards/auth.guard';
+import { canActivateGuard, canMatchGuard, checkAuthStatus } from './auth/guards/auth.guard';
 import { Error404PageComponent } from './shared/pages/error404-page/error404-page.component';
 
 const routes: Routes = [
